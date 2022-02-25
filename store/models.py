@@ -17,11 +17,19 @@ LABEL_CHOICES = (
     ('D', 'danger')
 )
 
+def itemImage(instance, filename):
+    return f"{instance.id}-{filename}"
+
 class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     label = models.CharField(choices= LABEL_CHOICES, max_length=1)
+    image = models.ImageField(
+        upload_to=itemImage,
+        blank=True,
+        null=True
+    )
     def __str__(self):
         return self.title
 
