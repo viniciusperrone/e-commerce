@@ -204,7 +204,11 @@
 
               <!--Card image-->
               <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt="">
+                {% if item.image %}
+                <img src="{{item.image.url}}" class="card-img-top" alt="">
+                {% else %}
+                <img src="" class="card-img-top" alt="">
+                {% endif %}
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -215,18 +219,18 @@
               <div class="card-body text-center">
                 <!--Category & Title-->
                 <a href="" class="grey-text">
-                  <h5>Shirt</h5>
+                  <h5>{{ item.category }}</h5>
                 </a>
                 <h5>
                   <strong>
                     <a href="" class="dark-grey-text">{{ item.title }}
-                      <span class="badge badge-pill danger-color">NEW</span>
+                      <span class="badge badge-pill danger-color">Exclusivo</span>
                     </a>
                   </strong>
                 </h5>
 
                 <h4 class="font-weight-bold blue-text">
-                  <strong>${{ item.price }}</strong>
+                  <strong>R$ {{ item.price }}</strong>
                 </h4>
 
               </div>
