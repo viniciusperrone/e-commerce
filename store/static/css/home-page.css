@@ -5,8 +5,8 @@ header,
   height: 60vh;
 }
 
-.vinicius{
-  color: red;
+#nav-products{
+  background-color: green;
 }
 
 @media (max-width: 740px) {

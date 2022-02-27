@@ -8,6 +8,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/home-page.css' %}">
+  <link href="{% static 'css/home-page.css' %}" rel="stylesheet">
   <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
   <link href="{% static 'css/mdb.css' %}" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
@@ -53,6 +54,15 @@
 
   {% include "footer.html" %}
 
+  <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <script type="text/javascript">
+  // Animations initialization
+  new WOW().init();
+
+  </script>
 </body>
 
 </html>
