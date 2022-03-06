@@ -1,2 +1,4 @@
 /environment
-/store/static
+/media
+
+*.js
