@@ -1,25 +1,81 @@
 {% extends "base.html "%}
 
 {% block content %}
-<h2>Vender produto</h2>
 
-<main style="width: 100%; height: 505px;">
-    {% comment %} <form action="{% url 'store:criar_produtos' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <label>title</label>
-        <br />
-        <label>descrição</label>
-        <br />
-        <label>preço</label>
-        <br />
-        <label>categoria</label>
-        <br />
-        <label>tipo</label>
-        <br />
-        <label>Mais informações</label>
-        <br />
-        <button type="submit" class"button">Create</button>
-    </form> {% endcomment %}
+<main style="width: 100%; height: 650px; padding-top: 60px;">
+    
+    <h2 class="my-5 h2 text-center">Vender Produto</h2>
+    <div 
+        style="
+            width: 60%; 
+            margin: auto;
+            display: flex;
+            box-shadow: 0 0 0.4em #c6c6c6;
+            border-radius: 20px;
+        "
+    >
+        <form
+            class="card-body" 
+            action="{% url 'store:criar_produtos' %}" 
+            method="post" 
+            enctype="multipart/form-data"
+        >
+            {% csrf_token %}
+            
+            <div class="row">
+
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="text" id="firstName" class="form-control">
+                        <label for="firstName" class="">Título</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="text" id="firstName" class="form-control">
+                        <label for="firstName" class="">Descrição</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="number" id="firstName" class="form-control">
+                        <label for="firstName" class="">Preço</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="text" id="firstName" class="form-control">
+                        <label for="firstName" class="">Categoria</label>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="text" id="firstName" class="form-control">
+                        <label for="firstName" class="">Tipo</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <div class="md-form ">
+                        <input type="text" id="firstName" class="form-control">
+                        <label for="firstName" class="">Mais informações</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <button class="btn btn-green btn-md waves-effect m-0" type="submit">Upload de Imagem</button>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <button class="btn btn-green btn-md waves-effect m-0" type="submit">Publicar seu produto</button>
+                </div>
+            </div>    
+        </form>
+    </div>
 </main>
 
 {% endblock content %}
