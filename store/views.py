@@ -4,13 +4,11 @@ from .models import Item
 from .form import ItemForm
 
 def create_product(request):
-    form = ItemForm(data=request.POST)
-    if form.is_valid:
-        form.save()
-        context = {
-            'item': form.instance 
-        }
-        return render(request, 'create_product.html', context=context)
+    return render(request, 'create_product.html')
+
+def about_us(request):
+    return render(request, 'about-us.html')
+    
 def item_list(request):
     context = {
         'items': Item.objects.all()

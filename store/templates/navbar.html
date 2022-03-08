@@ -12,20 +12,46 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          {% if request.path == "/inicio" %}
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="inicio">Início      
-              <span class="sr-only">(current)</span>
-            </a>
+            <a class="nav-link waves-effect" href="{% url 'store:home' %}">Início</a>
           </li>
+          {% else %}
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_self">Sobre Nós</a>
+            <a class="nav-link waves-effect" href="{% url 'store:home' %}">Início</a>
           </li>
+          {% endif %}
+
+          {% if request.path == "/sobre-nos" %}
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="{% url 'store:about_us'%}" target="_self">Sobre Nós</a>
+          </li>
+          {% else %}
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="checkout" target="_self">Compra</a>
+            <a class="nav-link waves-effect" href="{% url 'store:about_us'%}" target="_self">Sobre Nós</a>
           </li>
+          {% endif %}
+
+          {% if request.path == "/checkout" %}
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="{% url 'store:checkout' %}" target="_self">Compra</a>
+          </li>
+          {% else %}
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_self">Produtos</a>
+            <a class="nav-link waves-effect" href="{% url 'store:checkout' %}" target="_self">Compra</a>
           </li>
+          {% endif %}
+
+          {% if request.path == "/produtos/criar" %}
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="{% url 'store:criar_produtos' %}" target="_self">Vender Produto</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'store:criar_produtos' %}" target="_self">Vender Produto</a>
+          </li>
+          {% endif %}
+
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
