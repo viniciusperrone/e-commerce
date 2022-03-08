@@ -12,9 +12,9 @@ CATEGORY_CHOICES = (
 )
 
 LABEL_CHOICES = (
-    ('P', 'primary'),
-    ('S', 'secondary'),
-    ('D', 'danger')
+    ('E', 'Escritório'),
+    ('G', 'Gamer'),
+    ('P', 'Programador')
 )
 
 def itemImage(instance, filename):
